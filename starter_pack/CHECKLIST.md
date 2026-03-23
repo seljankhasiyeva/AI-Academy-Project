@@ -15,8 +15,8 @@ Use this checklist before you begin substantive work.
 
 - Read the assignment handout carefully before writing code.
 - Clone the repository and confirm the folder structure.
-- Open `README.md` and add team names and roles.
-- Read `CHECKLIST.md` once before writing code.
+- Open `starter_pack/README.md` and add team names and roles.
+- Read `starter_pack/CHECKLIST.md` once before writing code.
 - Create branches before beginning implementation work.
 - Inspect the provided data files and confirm shapes.
 - Decide which team member owns:

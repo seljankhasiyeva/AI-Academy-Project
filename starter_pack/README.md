@@ -11,7 +11,7 @@ This starter pack is intentionally minimal. Its job is to remove setup noise, no
 - `data/moons.npz` for the nonlinear synthetic task
 - `scripts/generate_synthetic.py`, which regenerates the two synthetic datasets
 - a minimal repository skeleton
-- the root `README.md` and `CHECKLIST.md`
+- `starter_pack/README.md` and `starter_pack/CHECKLIST.md`
 - an optional LaTeX report template at `report/template.tex`
 
 ## Not Included
@@ -45,4 +45,4 @@ Replace this section with your team members and high-level responsibilities.
 - `report/`: final PDF report and source files
 - `slides/`: presentation materials
 
-The starter pack leaves `src/` intentionally empty except for guidance text. Begin by reading the root `README.md` and `CHECKLIST.md`.
+The starter pack leaves `src/` intentionally empty except for guidance text. Begin by reading `starter_pack/README.md` and `starter_pack/CHECKLIST.md`.

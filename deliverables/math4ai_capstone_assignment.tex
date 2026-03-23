@@ -341,10 +341,10 @@ The synthetic tasks are chosen for geometric clarity. The digits benchmark is ch
 Use the starter-pack files directly:
 
 \begin{itemize}
-    \item \filepath{data/linear_gaussian.npz} for the linear synthetic task
-    \item \filepath{data/moons.npz} for the nonlinear synthetic task
-    \item \filepath{data/digits_data.npz} for the digits feature matrix and labels
-    \item \filepath{data/digits_split_indices.npz} for the fixed train/validation/test indices
+    \item \filepath{starter_pack/data/linear_gaussian.npz} for the linear synthetic task
+    \item \filepath{starter_pack/data/moons.npz} for the nonlinear synthetic task
+    \item \filepath{starter_pack/data/digits_data.npz} for the digits feature matrix and labels
+    \item \filepath{starter_pack/data/digits_split_indices.npz} for the fixed train/validation/test indices
 \end{itemize}
 
 \subsection{Exact digits benchmark protocol}
@@ -352,11 +352,11 @@ Use the starter-pack files directly:
 The digits benchmark protocol is fixed for all teams.
 
 \begin{itemize}
-    \item \textbf{Input representation:} use the flattened 64-dimensional vectors stored in \filepath{data/digits_data.npz}.
-    \item \textbf{Labels:} use the digit labels stored in \filepath{data/digits_data.npz}.
-    \item \textbf{Split definition:} use \texttt{train\_idx}, \texttt{val\_idx}, and \texttt{test\_idx} from \filepath{data/digits_split_indices.npz}. The script \filepath{scripts/make_digits_split.py} is included for reproducibility; your experiments should use the published indices.
+    \item \textbf{Input representation:} use the flattened 64-dimensional vectors stored in \filepath{starter_pack/data/digits_data.npz}.
+    \item \textbf{Labels:} use the digit labels stored in \filepath{starter_pack/data/digits_data.npz}.
+    \item \textbf{Split definition:} use \texttt{train\_idx}, \texttt{val\_idx}, and \texttt{test\_idx} from \filepath{starter_pack/data/digits_split_indices.npz}. The script \filepath{starter_pack/scripts/make_digits_split.py} is included for reproducibility; your experiments should use the published indices.
     \item \textbf{Scaling:} the provided digits features are already scaled to the interval \([0,1]\). Do not apply additional normalization, whitening, feature engineering, or augmentation in the required core experiments.
-    \item \textbf{Core preprocessing rule:} outside Track A, use the digits features exactly as provided in \filepath{data/digits_data.npz}.
+    \item \textbf{Core preprocessing rule:} outside Track A, use the digits features exactly as provided in \filepath{starter_pack/data/digits_data.npz}.
     \item \textbf{Evaluation metrics:} for digits, always report both classification accuracy and mean cross-entropy loss. Accuracy means the fraction of correctly classified examples. Mean cross-entropy means the average negative log-probability assigned to the true class over the evaluation split.
     \item \textbf{Model selection metric:} use validation cross-entropy as the primary metric when choosing settings.
     \item \textbf{Default hidden width:} use hidden width \(32\) for the neural network outside the required capacity ablation.
@@ -374,19 +374,33 @@ These defaults are part of the experimental contract. Do not turn the digits ben
 The starter pack is intentionally minimal. It includes only:
 
 \begin{itemize}
-    \item \filepath{data/digits_data.npz},
-    \item \filepath{data/digits_split_indices.npz},
-    \item \filepath{data/linear_gaussian.npz},
-    \item \filepath{data/moons.npz},
-    \item \filepath{scripts/make_digits_split.py},
-    \item \filepath{scripts/generate_synthetic.py},
-    \item the root \filepath{README.md} and \filepath{CHECKLIST.md},
-    \item the optional report template \filepath{report/template.tex}.
+    \item \filepath{starter_pack/data/digits_data.npz},
+    \item \filepath{starter_pack/data/digits_split_indices.npz},
+    \item \filepath{starter_pack/data/linear_gaussian.npz},
+    \item \filepath{starter_pack/data/moons.npz},
+    \item \filepath{starter_pack/scripts/make_digits_split.py},
+    \item \filepath{starter_pack/scripts/generate_synthetic.py},
+    \item \filepath{starter_pack/README.md} and \filepath{starter_pack/CHECKLIST.md},
+    \item the optional report template \filepath{starter_pack/report/template.tex}.
 \end{itemize}
 
 It does \textbf{not} include any model implementation code, model skeletons, placeholder methods, optimizer scaffolding, or training-loop scaffolding.
 
-Begin with the root \filepath{README.md} and \filepath{CHECKLIST.md}. If you want to inspect how the provided datasets were produced, read \filepath{scripts/generate_synthetic.py} and \filepath{scripts/make_digits_split.py}.
+Begin with \filepath{starter_pack/README.md} and \filepath{starter_pack/CHECKLIST.md}. If you want to inspect how the provided datasets were produced, read \filepath{starter_pack/scripts/generate_synthetic.py} and \filepath{starter_pack/scripts/make_digits_split.py}.
+
+\subsection{How to access the repository}
+
+The student repository for this capstone is:
+\begin{quote}
+\url{https://github.com/Murad-Huseynli/math4ai_capstone}
+\end{quote}
+
+Clone it with:
+\begin{quote}
+\verb|git clone https://github.com/Murad-Huseynli/math4ai_capstone.git|
+\end{quote}
+
+After cloning, begin by reading \filepath{README.md}, then \filepath{starter_pack/README.md}, and then \filepath{starter_pack/CHECKLIST.md}.
 
 \section{Implementation Requirements}
 
@@ -556,11 +570,11 @@ Required work:
     \item a brief interpretation tied back to the main project question.
 \end{itemize}
 
-Use the digits data in \filepath{data/digits_data.npz} for this track.
+Use the digits data in \filepath{starter_pack/data/digits_data.npz} for this track.
 
 \subsection{Track B: Prediction confidence and reliability}
 
-Track B must be conducted on the fixed digits benchmark. Use predictions produced by your trained models on the fixed digits benchmark, using inputs from \filepath{data/digits_data.npz} and the split defined in \filepath{data/digits_split_indices.npz}. This is \textbf{not} a full modern uncertainty-estimation project. Keep the language precise and modest: confidence, reliability, confidence versus correctness, predictive entropy.
+Track B must be conducted on the fixed digits benchmark. Use predictions produced by your trained models on the fixed digits benchmark, using inputs from \filepath{starter_pack/data/digits_data.npz} and the split defined in \filepath{starter_pack/data/digits_split_indices.npz}. This is \textbf{not} a full modern uncertainty-estimation project. Keep the language precise and modest: confidence, reliability, confidence versus correctness, predictive entropy.
 
 Required work:
 
@@ -597,7 +611,7 @@ Submit a professionally formatted PDF report.
     \item LaTeX/Overleaf is strongly recommended but not required
 \end{itemize}
 
-An optional starting template is included at \filepath{report/template.tex}.
+An optional starting template is included at \filepath{starter_pack/report/template.tex}.
 
 Your report must include the following sections:
 
