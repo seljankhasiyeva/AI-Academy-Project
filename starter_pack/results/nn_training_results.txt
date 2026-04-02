@@ -1,0 +1,6 @@
+
+Final Results:
+Train Accuracy: 0.9869646182495344
+Val Accuracy  : 0.9633802816901409
+Test Accuracy : 0.9402173913043478
+Test Loss     : 0.18896910702906117

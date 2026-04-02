@@ -1,0 +1,41 @@
+
+Running Softmax Regression (5 seeds)...
+  seed=42 | acc=0.9402 | loss=0.2694
+  seed=0 | acc=0.9402 | loss=0.2696
+  seed=1 | acc=0.9375 | loss=0.2695
+  seed=7 | acc=0.9402 | loss=0.2696
+  seed=99 | acc=0.9375 | loss=0.2697
+
+==================================================
+  Softmax Regression
+==================================================
+  Accuracy : 0.9391 ± 0.0018  (std=0.0015)
+  CE Loss  : 0.2695 ± 0.0001  (std=0.0001)
+  Raw accs : [np.float64(0.9402), np.float64(0.9402), np.float64(0.9375), np.float64(0.9402), np.float64(0.9375)]
+  Raw losses: [np.float64(0.2694), np.float64(0.2696), np.float64(0.2695), np.float64(0.2696), np.float64(0.2697)]
+
+Running Neural Network (5 seeds)...
+  seed=42 | acc=0.9402 | loss=0.1890
+  seed=0 | acc=0.9402 | loss=0.1931
+  seed=1 | acc=0.9429 | loss=0.1885
+  seed=7 | acc=0.9402 | loss=0.1940
+  seed=99 | acc=0.9402 | loss=0.1819
+
+==================================================
+  Neural Network (hidden=32)
+==================================================
+  Accuracy : 0.9408 ± 0.0015  (std=0.0012)
+  CE Loss  : 0.1893 ± 0.0060  (std=0.0048)
+  Raw accs : [np.float64(0.9402), np.float64(0.9402), np.float64(0.9429), np.float64(0.9402), np.float64(0.9402)]
+  Raw losses: [np.float64(0.189), np.float64(0.1931), np.float64(0.1885), np.float64(0.194), np.float64(0.1819)]
+
+=================================================================
+  FINAL REPEATED-SEED RESULTS (5 seeds, 95% CI)
+=================================================================
+                    Model |           Test Acc |          Test Loss
+-----------------------------------------------------------------
+       Softmax Regression | 0.9391 ± 0.0018 | 0.2695 ± 0.0001
+           Neural Network | 0.9408 ± 0.0015 | 0.1893 ± 0.0060
+=================================================================
+
+Note: CI computed as x_bar ± 2.776 * s / sqrt(5)  [t-dist, 4 df]
