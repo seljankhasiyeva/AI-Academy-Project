@@ -8,7 +8,7 @@ from softmax_regression import SoftmaxRegression
 from data_loading import load_gaussian, load_moons
 
 
-def train_and_evaluate(dataset_name, X_train, y_train, X_val, y_val, X_test, y_test):
+def train_and_evaluate(dataset_name, X_train, y_train, X_val, y_val, X_test, y_test, nn_lr=0.05, nn_epochs=200, nn_batch=64):
     print(f"\n{'='*50}")
     print(f"Dataset: {dataset_name}")
     print(f"{'='*50}")
@@ -36,7 +36,7 @@ def train_and_evaluate(dataset_name, X_train, y_train, X_val, y_val, X_test, y_t
     history_nn = nn.fit(
         X_train, y_train,
         X_val=X_val, y_val=y_val,
-        lr=0.05, reg=1e-4, epochs=200, batch_size=64
+        lr=nn_lr, reg=1e-4, epochs=nn_epochs, batch_size=nn_batch,
     )
 
     print("\n[Neural Network]")
@@ -58,5 +58,6 @@ if __name__ == "__main__":
     # Moons
     X_tr, y_tr, X_v, y_v, X_te, y_te = load_moons()
     sm_m, nn_m, hist_sm_m, hist_nn_m = train_and_evaluate(
-        "Moons", X_tr, y_tr, X_v, y_v, X_te, y_te
+        "Moons", X_tr, y_tr, X_v, y_v, X_te, y_te,
+        nn_lr=0.1, nn_epochs=500, nn_batch=32
     )
