@@ -1,48 +1,47 @@
 # Math4AI Starter Pack
 
-This starter pack is intentionally minimal. Its job is to remove setup noise, not to reduce the intellectual core of the capstone.
+From-scratch implementation of Softmax Regression and a two-layer Neural Network in NumPy,
+as the final capstone for the Math4AI course.
 
-## Included
+## What Was Provided
 
-- `data/digits_data.npz`, containing the fixed digits feature matrix and label vector
-- `data/digits_split_indices.npz`, containing the fixed train/validation/test indices
-- `scripts/make_digits_split.py`, a deterministic split-generation script
-- `data/linear_gaussian.npz` for the linear synthetic task
-- `data/moons.npz` for the nonlinear synthetic task
-- `scripts/generate_synthetic.py`, which regenerates the two synthetic datasets
-- a minimal repository skeleton
-- `starter_pack/README.md` and `starter_pack/CHECKLIST.md`
-- an optional LaTeX report template at `report/template.tex`
+- `data/digits_data.npz` — fixed digits feature matrix and label vector
+- `data/digits_split_indices.npz` — fixed train/validation/test indices
+- `data/linear_gaussian.npz` — linear synthetic dataset
+- `data/moons.npz` — nonlinear synthetic dataset
+- `scripts/make_digits_split.py` — deterministic split-generation script
+- `scripts/generate_synthetic.py` — regenerates both synthetic datasets
+- `report/template.tex` — optional LaTeX report template
 
-## Not Included
+## What We Implemented
 
-- softmax regression code
-- neural network code
-- model skeletons or placeholder methods
-- training-loop scaffolding
-- optimizer implementations
-- optimization utilities beyond basic data preparation
-- plotting code for experiments
-- any hidden implementation of the core methods
+**Models (`src/`):**
+- `softmax_regression.py` — multinomial logistic regression with L2 regularization and mini-batch SGD
+- `neural_network.py` — two-layer network (Linear → Tanh → Linear → Softmax) with vectorized backpropagation
+- `data_loading.py` — shared data utilities
 
-Students are expected to implement the intellectually central parts of the project themselves.
+**Experiments (`scripts/`):**
+- Gradient verification (numerical vs analytic) for both models
+- Training on Linear Gaussian, Moons, and Digits
+- Softmax vs NN comparison on the digits benchmark
+- Capacity ablation: hidden width ∈ {2, 8, 32} on Moons
+- Optimizer study: SGD vs Momentum vs Adam
+- Repeated-seed evaluation (5 seeds, 95% CI)
+- Confidence and calibration analysis (reliability diagrams, entropy boxplots)
+
+## Repository Layout
+
+- `data/` — provided datasets and fixed split indices
+- `scripts/` — all training, evaluation, and experiment scripts
+- `src/` — model and data loading source code
+- `figures/` — output plots and decision boundaries
+- `results/` — saved experiment outputs and summary tables
+- `models/` — saved model checkpoints (.pkl)
+- `report/` — final report and LaTeX source
+- `slides/` — presentation materials
 
 ## Team
 
-Replace this section with your team members and high-level responsibilities.
-
-- Name 1: role
-- Name 2: role
-- Name 3: role
-
-## Suggested Repository Layout
-
-- `data/`: provided data, split indices, and any team-generated derived arrays
-- `scripts/`: deterministic starter-pack utilities
-- `src/`: model, training, and evaluation code written by the team
-- `figures/`: plots for the report and slides
-- `results/`: saved experiment outputs and summary tables
-- `report/`: final PDF report and source files
-- `slides/`: presentation materials
-
-The starter pack leaves `src/` intentionally empty except for guidance text. Begin by reading `starter_pack/README.md` and `starter_pack/CHECKLIST.md`.
+- Seljan – Core experiments, ablations, optimizer study, presentation.
+- Jeyhuna – One-hidden-layer network implementation, Track B analysis.
+- Suleyman – Softmax regression implementation, final report writing.
