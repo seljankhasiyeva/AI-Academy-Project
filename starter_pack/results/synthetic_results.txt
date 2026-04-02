@@ -1,0 +1,32 @@
+
+==================================================
+Dataset: Linear Gaussian
+==================================================
+
+[Softmax Regression]
+  Train Accuracy : 0.9125
+  Val   Accuracy : 0.9250
+  Test  Accuracy : 0.9500
+  Test  Loss     : 0.1543
+
+[Neural Network]
+  Train Accuracy : 0.9125
+  Val   Accuracy : 0.9250
+  Test  Accuracy : 0.9500
+  Test  Loss     : 0.1540
+
+==================================================
+Dataset: Moons
+==================================================
+
+[Softmax Regression]
+  Train Accuracy : 0.8625
+  Val   Accuracy : 0.8750
+  Test  Accuracy : 0.8500
+  Test  Loss     : 0.2855
+
+[Neural Network]
+  Train Accuracy : 0.8625
+  Val   Accuracy : 0.8750
+  Test  Accuracy : 0.8500
+  Test  Loss     : 0.2697

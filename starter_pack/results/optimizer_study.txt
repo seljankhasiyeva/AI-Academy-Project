@@ -1,0 +1,15 @@
+Training with SGD...
+  SGD        | test_acc=0.9402 | test_loss=0.1890
+Training with Momentum...
+  Momentum   | test_acc=0.9511 | test_loss=0.1654
+Training with Adam...
+  Adam       | test_acc=0.9511 | test_loss=0.1571
+
+Saved: starter_pack/figures/optimizer_study.png
+
+=== Optimizer Study Summary ===
+ Optimizer |  Test Acc |  Test Loss
+-----------------------------------
+       SGD |    0.9402 |     0.1890
+  Momentum |    0.9511 |     0.1654
+      Adam |    0.9511 |     0.1571

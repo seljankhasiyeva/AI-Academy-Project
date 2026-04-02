@@ -1,0 +1,15 @@
+Training NN with hidden_dim=2...
+  hidden= 2 | train=0.8625 | val=0.8750 | test=0.8500 | loss=0.2706
+Training NN with hidden_dim=8...
+  hidden= 8 | train=0.8667 | val=0.8875 | test=0.8500 | loss=0.2701
+Training NN with hidden_dim=32...
+  hidden=32 | train=0.9625 | val=0.9875 | test=0.9750 | loss=0.1004
+
+Saved: starter_pack/figures/capacity_ablation.png
+
+=== Capacity Ablation Summary ===
+  Hidden |  Train Acc |  Val Acc |  Test Acc |  Test Loss
+-------------------------------------------------------
+       2 |     0.8625 |   0.8750 |    0.8500 |     0.2706
+       8 |     0.8667 |   0.8875 |    0.8500 |     0.2701
+      32 |     0.9625 |   0.9875 |    0.9750 |     0.1004

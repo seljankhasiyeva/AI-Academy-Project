@@ -1,0 +1,8 @@
+Training Softmax on Digits...
+Training Neural Network on Digits...
+
+=== Final Test Results ===
+Softmax | Test Acc=0.9402 | Test Loss=0.2694
+NN      | Test Acc=0.9402      | Test Loss=0.1890
+
+Saved: starter_pack/figures/digits_training_dynamics.png
