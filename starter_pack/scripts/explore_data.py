@@ -41,9 +41,9 @@ axes[1].set_ylabel('Feature 2')
 
 X_d = digits[digits.files[0]]
 y_d = digits[digits.files[1]]
-axes[2].imshow(X_d[0].reshape(8, 8), cmap='gray')
-axes[2].set_title(f'Digits - label: {y_d[0]}')
-
+random_idx = np.random.randint(0, len(X_d)) 
+axes[2].imshow(X_d[random_idx].reshape(8, 8), cmap='gray')
+axes[2].set_title(f'Digits - label: {y_d[random_idx]}')
 plt.tight_layout()
 plt.savefig('starter_pack/figures/data_overview.png')
 plt.show()
